@@ -81,7 +81,6 @@
 
   <!-- Monetag Ad Script -->
   <script type="text/javascript">
-    // Replace this with your Monetag ad script
     (function() {
       var script = document.createElement('script');
       script.src = 'https://ptakeemsaifegro.net/4/9018764';
@@ -95,15 +94,15 @@
       <!-- Match 1: FC Barcelona vs Atlético Madrid -->
       <div class="match">
         <h3>Match 1: FC Barcelona vs Atlético Madrid</h3>
-        <img src="https://github.com/ansu223/FootballNow/raw/main/professional%20banner%20FC%20Barcelona%20and%20Atl%C3%A9tico%20Madrid%20.jpg" alt="FC Barcelona vs Atlético Madrid">
-        <iframe src="https://www.youtube.com/watch?v=umCCh6e7eXI" allowfullscreen></iframe>
+        <img src="https://github.com/ansu223/FootballNow/raw/main/professional%20banner%20FC%20Barcelona%20and%20Atl%C3%A9tico%20Madrid%20.jpg" alt="FC Barcelona vs Atlético Madrid" onerror="this.style.display='none'">
+        <iframe src="https://www.youtube.com/embed/umCCh6e7eXI" allowfullscreen onerror="this.style.display='none'"></iframe>
       </div>
 
       <!-- Match 2: Real Madrid vs Villarreal -->
       <div class="match">
         <h3>Match 2: Real Madrid vs Villarreal</h3>
-        <img src="https://github.com/ansu223/FootballNow/raw/main/professional%20banner%20featuring%20the%20Real%20Madrid%20and%20Villarreal%20.jpg" alt="Real Madrid vs Villarreal">
-        <iframe src="https://www.youtube.com/watch?v=umCCh6e7eXI" allowfullscreen></iframe>
+        <img src="https://github.com/ansu223/FootballNow/raw/main/professional%20banner%20featuring%20the%20Real%20Madrid%20and%20Villarreal%20.jpg" alt="Real Madrid vs Villarreal" onerror="this.style.display='none'">
+        <iframe src="https://www.youtube.com/embed/umCCh6e7eXI" allowfullscreen onerror="this.style.display='none'"></iframe>
       </div>
     </div>
   </div>
@@ -111,5 +110,22 @@
   <footer>
     <p>&copy; 2025 Live Football Matches. All rights reserved.</p>
   </footer>
+
+  <!-- Debugging Script -->
+  <script>
+    // Log image loading errors
+    document.querySelectorAll('img').forEach(img => {
+      img.onerror = () => {
+        console.error('Failed to load image:', img.src);
+      };
+    });
+
+    // Log iframe loading errors
+    document.querySelectorAll('iframe').forEach(iframe => {
+      iframe.onerror = () => {
+        console.error('Failed to load iframe:', iframe.src);
+      };
+    });
+  </script>
 </body>
 </html>
