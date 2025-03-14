@@ -61,6 +61,20 @@
       border: none;
       border-radius: 5px;
     }
+    .fullscreen-btn {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      background-color: #ff4757;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .fullscreen-btn:hover {
+      background-color: #ff6b81;
+    }
     footer {
       text-align: center;
       padding: 20px;
@@ -95,14 +109,16 @@
       <div class="match">
         <h3>Match 1: FC Barcelona vs Atlético Madrid</h3>
         <img src="https://github.com/ansu223/FootballNow/raw/main/professional%20banner%20FC%20Barcelona%20and%20Atl%C3%A9tico%20Madrid%20.jpg" alt="FC Barcelona vs Atlético Madrid" onerror="this.style.display='none'">
-        <iframe src="https://www.youtube.com/embed/umCCh6e7eXI" allowfullscreen onerror="this.style.display='none'"></iframe>
+        <iframe id="stream1" src="https://la12hd.com/vivo/canales.php?stream=disney15" allowfullscreen onerror="this.style.display='none'"></iframe>
+        <button class="fullscreen-btn" onclick="toggleFullscreen('stream1')">Full Screen</button>
       </div>
 
       <!-- Match 2: Real Madrid vs Villarreal -->
       <div class="match">
         <h3>Match 2: Real Madrid vs Villarreal</h3>
         <img src="https://github.com/ansu223/FootballNow/raw/main/professional%20banner%20featuring%20the%20Real%20Madrid%20and%20Villarreal%20.jpg" alt="Real Madrid vs Villarreal" onerror="this.style.display='none'">
-        <iframe src="https://www.youtube.com/embed/umCCh6e7eXI" allowfullscreen onerror="this.style.display='none'"></iframe>
+        <iframe id="stream2" src="https://la12hd.com/vivo/canales.php?stream=disney15" allowfullscreen onerror="this.style.display='none'"></iframe>
+        <button class="fullscreen-btn" onclick="toggleFullscreen('stream2')">Full Screen</button>
       </div>
     </div>
   </div>
@@ -126,6 +142,23 @@
         console.error('Failed to load iframe:', iframe.src);
       };
     });
+
+    // Fullscreen toggle function
+    function toggleFullscreen(iframeId) {
+      const iframe = document.getElementById(iframeId);
+
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) { // Firefox
+        iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { // IE/Edge
+        iframe.msRequestFullscreen();
+      } else {
+        alert('Fullscreen mode is not supported in this browser.');
+      }
+    }
   </script>
 </body>
 </html>
