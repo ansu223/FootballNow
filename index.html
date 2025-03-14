@@ -94,16 +94,6 @@
     <h1>Live Football Matches</h1>
   </header>
 
-  <!-- Monetag Ad Script -->
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script');
-      script.src = 'https://ptakeemsaifegro.net/4/9018764';
-      script.async = true;
-      document.head.appendChild(script);
-    })();
-  </script>
-
   <div class="container">
     <div class="match-list">
       <!-- Match 1: FC Barcelona vs Atlético Madrid -->
@@ -111,7 +101,7 @@
         <h3>Match 1: FC Barcelona vs Atlético Madrid</h3>
         <img src="https://github.com/ansu223/FootballNow/raw/main/professional%20banner%20FC%20Barcelona%20and%20Atl%C3%A9tico%20Madrid%20.jpg" alt="FC Barcelona vs Atlético Madrid" onerror="this.style.display='none'">
         <iframe id="stream1" src="https://la12hd.com/vivo/canales.php?stream=disney15" allowfullscreen onerror="this.style.display='none'"></iframe>
-        <button class="fullscreen-btn" onclick="startStream('stream1')">Start Stream</button>
+        <button class="fullscreen-btn" onclick="startStream('stream1')">▶️ Start Stream</button>
       </div>
 
       <!-- Match 2: Real Madrid vs Villarreal -->
@@ -119,7 +109,7 @@
         <h3>Match 2: Real Madrid vs Villarreal</h3>
         <img src="https://github.com/ansu223/FootballNow/raw/main/professional%20banner%20featuring%20the%20Real%20Madrid%20and%20Villarreal%20.jpg" alt="Real Madrid vs Villarreal" onerror="this.style.display='none'">
         <iframe id="stream2" src="https://la12hd.com/vivo/canales.php?stream=disney15" allowfullscreen onerror="this.style.display='none'"></iframe>
-        <button class="fullscreen-btn" onclick="startStream('stream2')">Start Stream</button>
+        <button class="fullscreen-btn" onclick="startStream('stream2')">▶️ Start Stream</button>
       </div>
     </div>
   </div>
@@ -144,6 +134,13 @@
       };
     });
 
+    // Ad links
+    const adLinks = [
+      'https://ptakeemsaifegro.net/4/9018764',
+      'https://ptakeemsaifegro.net/4/9014606',
+      'https://ptakeemsaifegro.net/4/9028299'
+    ];
+
     // Function to start the stream and show ads
     function startStream(iframeId) {
       const iframe = document.getElementById(iframeId);
@@ -164,8 +161,11 @@
 
     // Function to show an ad
     function showAd() {
-      // Replace this with your ad display logic
-      alert('Ad is playing...'); // Simulate an ad
+      // Randomly select an ad link
+      const randomAdLink = adLinks[Math.floor(Math.random() * adLinks.length)];
+
+      // Open the ad in a new tab
+      window.open(randomAdLink, '_blank');
     }
   </script>
 </body>
