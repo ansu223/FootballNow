@@ -60,6 +60,7 @@
       height: 200px;
       border: none;
       border-radius: 5px;
+      display: none; /* Hide iframe initially */
     }
     .fullscreen-btn {
       display: block;
@@ -110,7 +111,7 @@
         <h3>Match 1: FC Barcelona vs Atlético Madrid</h3>
         <img src="https://github.com/ansu223/FootballNow/raw/main/professional%20banner%20FC%20Barcelona%20and%20Atl%C3%A9tico%20Madrid%20.jpg" alt="FC Barcelona vs Atlético Madrid" onerror="this.style.display='none'">
         <iframe id="stream1" src="https://la12hd.com/vivo/canales.php?stream=disney15" allowfullscreen onerror="this.style.display='none'"></iframe>
-        <button class="fullscreen-btn" onclick="toggleFullscreen('stream1')">Full Screen</button>
+        <button class="fullscreen-btn" onclick="startStream('stream1')">Start Stream</button>
       </div>
 
       <!-- Match 2: Real Madrid vs Villarreal -->
@@ -118,7 +119,7 @@
         <h3>Match 2: Real Madrid vs Villarreal</h3>
         <img src="https://github.com/ansu223/FootballNow/raw/main/professional%20banner%20featuring%20the%20Real%20Madrid%20and%20Villarreal%20.jpg" alt="Real Madrid vs Villarreal" onerror="this.style.display='none'">
         <iframe id="stream2" src="https://la12hd.com/vivo/canales.php?stream=disney15" allowfullscreen onerror="this.style.display='none'"></iframe>
-        <button class="fullscreen-btn" onclick="toggleFullscreen('stream2')">Full Screen</button>
+        <button class="fullscreen-btn" onclick="startStream('stream2')">Start Stream</button>
       </div>
     </div>
   </div>
@@ -143,21 +144,28 @@
       };
     });
 
-    // Fullscreen toggle function
-    function toggleFullscreen(iframeId) {
+    // Function to start the stream and show ads
+    function startStream(iframeId) {
       const iframe = document.getElementById(iframeId);
 
-      if (iframe.requestFullscreen) {
-        iframe.requestFullscreen();
-      } else if (iframe.mozRequestFullScreen) { // Firefox
-        iframe.mozRequestFullScreen();
-      } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
-        iframe.webkitRequestFullscreen();
-      } else if (iframe.msRequestFullscreen) { // IE/Edge
-        iframe.msRequestFullscreen();
-      } else {
-        alert('Fullscreen mode is not supported in this browser.');
-      }
+      // Show an ad before starting the stream
+      showAd();
+
+      // Show the iframe after the ad
+      setTimeout(() => {
+        iframe.style.display = 'block';
+      }, 5000); // Wait for 5 seconds (simulate ad duration)
+
+      // Show ads every 5 minutes
+      setInterval(() => {
+        showAd();
+      }, 5 * 60 * 1000); // 5 minutes in milliseconds
+    }
+
+    // Function to show an ad
+    function showAd() {
+      // Replace this with your ad display logic
+      alert('Ad is playing...'); // Simulate an ad
     }
   </script>
 </body>
