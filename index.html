@@ -1,171 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live Football Matches</title>
+  <title>📘 الخرائط الذهنية لسور القرآن الكريم</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    /* Google Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@700&display=swap');
-
     body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #1e1e1e;
-      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f8fa;
+      color: #222;
       margin: 0;
       padding: 0;
-    }
-    header {
-      background-color: #333;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 48px;
-      font-family: 'Bebas Neue', sans-serif;
-      color: #ff4757;
-      text-transform: uppercase;
-      letter-spacing: 3px;
+      direction: rtl;
     }
     .container {
-      max-width: 1200px;
-      margin: 20px auto;
+      max-width: 500px;
+      margin: 40px auto;
       padding: 20px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    .match-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-    .match {
-      background-color: #2c2c2c;
-      border-radius: 10px;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    .match h3 {
-      margin: 0 0 10px;
+    h1 {
       font-size: 24px;
-      color: #ffa502;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      text-align: center;
     }
-    .match img {
+    img.preview {
       width: 100%;
       border-radius: 10px;
-      margin-bottom: 10px;
+      margin: 20px 0;
     }
-    .match iframe {
-      width: 100%;
-      height: 200px;
-      border: none;
-      border-radius: 5px;
-      display: none; /* Hide iframe initially */
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 15px;
     }
-    .fullscreen-btn {
-      display: block;
-      margin: 10px auto;
-      padding: 10px 20px;
-      background-color: #ff4757;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    .fullscreen-btn:hover {
-      background-color: #ff6b81;
-    }
-    footer {
+    .cta {
+      background-color: #27ae60;
+      color: white;
+      padding: 14px;
+      border-radius: 10px;
       text-align: center;
-      padding: 20px;
-      background-color: #333;
-      margin-top: 20px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
     }
-    footer p {
-      margin: 0;
-      font-size: 14px;
-      color: #aaa;
+    .cta:hover {
+      background-color: #219150;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Live Football Matches</h1>
-  </header>
-
   <div class="container">
-    <div class="match-list">
-      <!-- NEXT : FC Barcelona vs Atlético Madrid -->
-      <div class="match">
-        <h3>Next Match: FC Barcelona vs Atlético Madrid</h3>
-        <img src="https://github.com/ansu223/FootballNow/raw/main/professional%20banner%20FC%20Barcelona%20and%20Atl%C3%A9tico%20Madrid%20.jpg" alt="FC Barcelona vs Atlético Madrid" onerror="this.style.display='none'">
-        <iframe id="stream1" src="https://la12hd.com/vivo/canales.php?stream=disney15" allowfullscreen onerror="this.style.display='none'"></iframe>
-        <button class="fullscreen-btn" onclick="startStream('stream1')">▶️ Start Stream</button>
-      </div>
-
-      <!-- TODAY : Real Madrid vs Villarreal -->
-      <div class="match">
-        <h3>Today : Real Madrid vs Villarreal</h3>
-        <img src="https://github.com/ansu223/FootballNow/raw/main/professional%20banner%20featuring%20the%20Real%20Madrid%20and%20Villarreal%20.jpg" alt="Real Madrid vs Villarreal" onerror="this.style.display='none'">
-        <iframe id="stream2" src="https://ok.ru/videoembed/9695931145807?nochat=1" allowfullscreen onerror="this.style.display='none'"></iframe>
-        <button class="fullscreen-btn" onclick="startStream('stream2')">▶️ Start Stream</button>
-      </div>
+    <h1>📘 الخرائط الذهنية لسور القرآن الكريم</h1>
+    <img src="https://i.imgur.com/LZTQlzK.jpg" alt="غلاف الخرائط الذهنية" class="preview">
+    <p>
+      هل تريد طريقة سهلة لتدبر سور القرآن وحفظها؟  
+      هذا الكتاب المجاني يحتوي على خرائط ذهنية مرئية تساعدك على فهم وتقسيم السور بأسلوب بسيط وسلس.
+    </p>
+    <p>
+      📥 لتحميل الكتاب مجاناً، فقط أكمل خطوة واحدة بسيطة.
+    </p>
+    <div class="cta" onclick="og_load();">
+      اضغط هنا لبدء التحميل 📘
     </div>
   </div>
 
-  <footer>
-    <p>&copy; 2025 Live Football Matches. All rights reserved.</p>
-  </footer>
-
-  <!-- Debugging Script -->
-  <script>
-    // Log image loading errors
-    document.querySelectorAll('img').forEach(img => {
-      img.onerror = () => {
-        console.error('Failed to load image:', img.src);
-      };
-    });
-
-    // Log iframe loading errors
-    document.querySelectorAll('iframe').forEach(iframe => {
-      iframe.onerror = () => {
-        console.error('Failed to load iframe:', iframe.src);
-      };
-    });
-
-    // Ad links
-    const adLinks = [
-      'https://ptakeemsaifegro.net/4/9018764',
-      'https://ptakeemsaifegro.net/4/9014606',
-      'https://ptakeemsaifegro.net/4/9028299'
-    ];
-
-    // Function to start the stream and show ads
-    function startStream(iframeId) {
-      const iframe = document.getElementById(iframeId);
-
-      // Show an ad before starting the stream
-      showAd();
-
-      // Show the iframe after the ad
-      setTimeout(() => {
-        iframe.style.display = 'block';
-      }, 5000); // Wait for 5 seconds (simulate ad duration)
-
-      // Show ads every 5 minutes
-      setInterval(() => {
-        showAd();
-      }, 5 * 60 * 1000); // 5 minutes in milliseconds
-    }
-
-    // Function to show an ad
-    function showAd() {
-      // Randomly select an ad link
-      const randomAdLink = adLinks[Math.floor(Math.random() * adLinks.length)];
-
-      // Open the ad in a new tab
-      window.open(randomAdLink, '_blank');
+  <!-- 📌 Content Locker Placeholder -->
+  <script type="text/javascript">
+    function og_load() {
+      // Replace this with your OGAds or CPA locker URL
+      window.location.href = "https://yourlockerlink.com";
     }
   </script>
 </body>
